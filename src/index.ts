@@ -56,11 +56,12 @@ export const proxyRoute = () => {
             replaceResponseCookie(fetchResponse, res);
             res.status(fetchResponse.status);
             res.json(fetchResponse.data);
+            next();
         } catch (errResponse) {
-            res.status(errResponse.status);
+            res.status(errResponse.status || 500);
             res.json(errResponse);
+            next(errResponse);
         }
-        next();
     };
 };
 

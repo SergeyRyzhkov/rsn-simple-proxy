@@ -1,0 +1,36 @@
+{
+  "compilerOptions": {
+    "target": "ES2019",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "declaration": true,
+    "declarationDir": "./npm/types",
+    "esModuleInterop": true,
+    "incremental": true,
+    "rootDir": "src",
+    "outDir": "./npm/lib",
+    "baseUrl": ".",
+    "sourceMap": true,
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    }
+  },
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.js",
+    "src/**/*.vue",
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "node_modules/**/*",
+    "**/*.spec.ts",
+    "dist/"
+  ]
+}

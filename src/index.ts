@@ -54,7 +54,7 @@ export const proxyRoute = () => {
             const proxyUrl = `${config.ExpressConfig.proxyUrl}${req.url}`;
             const fetchResponse = await prepareFetchResult(req, proxyUrl);
             replaceResponseCookie(fetchResponse, res);
-            res.status(fetchResponse.status);
+            res.status(fetchResponse.status || 200);
             res.json(fetchResponse.data);
             next();
         } catch (errResponse) {

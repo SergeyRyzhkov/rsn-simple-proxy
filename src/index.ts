@@ -42,8 +42,6 @@ export class ExpressApplication {
 
         this.app.use(express.json());
         this.app.use(cookieParser());
-        // this.app.use(headerMiddleware());
-
         this.app.use(proxyRoute());
     }
 }
